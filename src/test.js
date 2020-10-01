@@ -30,7 +30,14 @@ app.get('/get_current_time', (req, res) => {
 
 app.get('/how_pass_data', (req, res) => {
     res.send(
-        `Express possède un système de routage, c’est à dire que la fonction associé à la route va s’exécuter tout en bas de la pile de fonctions middleware.Concrètement, à chaque appel de route, les fonctions du haut de la pile vont s’exécuter et on va déscendre jusqu’à la fonction de route.Autrement dis, on pars d’un objet request vide et on lui applique des propriétés grâce aux fonctions middleware.Message to the user:${req.message}`
+        `<a href="https://expressjs.com/fr/guide/using-middleware.html">Utilisation de middleware</a>
+        <p>Pour passer des données d'un middleware à l'autre nous utilisons la variable nommé next. Exemple : <div><code>var app = express();
+
+        app.use(function (req, res, next) {
+          console.log('Time:', Date.now());
+          next();
+        });</code></div></p>
+        Message to the user:${req.message}`
     )
 })
 
